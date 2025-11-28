@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>FEIS – Market Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- HEADER -->
+    <header class="top">
+      <div class="top-inner">
+        <div class="brand">
+          <div class="brand-logo">FEIS</div>
+          <div class="brand-text">
+            <span class="brand-name">Finance &amp; Economic Insight Society</span>
+            <span class="brand-tag">Student Market Studio</span>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav-link" data-scroll="#hero">Accueil</button>
+          <button class="nav-link" data-scroll="#markets">Marchés</button>
+          <button class="nav-link" data-scroll="#feis">Le club</button>
+          <button class="nav-link" data-scroll="#newsletter">Newsletter</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO / INTRO -->
+      <section id="hero" class="section hero">
+        <div class="section-inner hero-layout">
+          <div class="hero-left">
+            <p class="hero-kicker">Studio d’analyse • FEIS</p>
+            <h1 class="hero-title">
+              Lire les marchés, <br />
+              structurer ses décisions.
+            </h1>
+            <p class="hero-sub">
+              Objectif : traiter les indices, la macro et les risques comme un système à analyser.
+              Pas comme un jeu. On prépare des réflexes d’investisseur étudiant.
+            </p>
+            <div class="hero-tags">
+              <span>Indices actions</span>
+              <span>Macro &amp; banques centrales</span>
+              <span>ETF &amp; allocation</span>
+              <span>Crypto labo</span>
+            </div>
+            <div class="hero-actions">
+              <button class="btn primary" data-scroll="#markets">Voir le board marchés</button>
+              <button class="btn ghost" data-scroll="#feis">Découvrir le club</button>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="panel panel-compact">
+              <div class="panel-header">
+                <div>
+                  <p class="panel-kicker">Vue rapide</p>
+                  <p class="panel-title">Indices &amp; crypto du jour</p>
+                </div>
+                <button class="chip chip-soft" id="refresh-btn">Simuler</button>
+              </div>
+
+              <div id="snapshot-list" class="snapshot-list">
+                <!-- Les lignes d’indices sont injectées par script.js -->
+              </div>
+
+              <p class="panel-note">
+                Données simulées pour la maquette FEIS. Ensuite : branchement possible sur une API
+                (Financial Times, Boursorama, etc.) côté backend.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARCHÉS -->
+      <section id="markets" class="section">
+        <div class="section-inner markets-layout">
+          <div class="section-header">
+            <p class="section-kicker">Board marchés</p>
+            <h2 class="section-title">Indices &amp; courbes</h2>
+            <p class="section-sub">
+              Un petit desk : niveaux, variations, puis vue graphique simple. La logique est prête
+              pour accueillir des données temps réel plus tard.
+            </p>
+          </div>
+
+          <div class="markets-grid">
+            <!-- Tableau des indices -->
+            <div class="panel">
+              <div class="panel-header">
+                <p class="panel-title">Liste des actifs suivis</p>
+              </div>
+              <div class="table-head">
+                <span>Actif</span>
+                <span>Cours</span>
+                <span>Variation</span>
+              </div>
+              <div id="markets-table" class="table-body">
+                <!-- Lignes d’indices générées par script.js -->
+              </div>
+            </div>
+
+            <!-- Graphique -->
+            <div class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="panel-kicker">Graphique</p>
+                  <p class="panel-title" id="chart-title">Sélectionne un indice</p>
+                </div>
+                <span class="chip" id="chart-ticker"></span>
+              </div>
+
+              <div class="chart-wrapper">
+                <div id="chart-canvas" class="chart-canvas">
+                  <!-- Barres générées par script.js -->
+                </div>
+              </div>
+
+              <div class="chart-meta">
+                <div>
+                  <p class="chart-label">Lecture FEIS</p>
+                  <p id="chart-comment" class="chart-comment">
+                    Clique sur un actif dans la liste pour afficher sa courbe pédagogique.
+                  </p>
+                </div>
+                <div class="chart-tags" id="chart-tags">
+                  <!-- Tags type “ETF monde”, “Indice large”, etc. -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEIS / LE CLUB -->
+      <section id="feis" class="section">
+        <div class="section-inner feis-layout">
+          <div class="section-header">
+            <p class="section-kicker">Qui sommes-nous ?</p>
+            <h2 class="section-title">FEIS, laboratoire étudiant de culture financière</h2>
+            <p class="section-sub">
+              Trois étudiants basés à Bordeaux, issus de sciences économiques.
+              Objectif : construire une base solide en lecture de marchés, sans promesse de performance.
+            </p>
+          </div>
+
+          <div class="feis-grid">
+            <article class="card">
+              <h3>Ce qu’on travaille</h3>
+              <ul class="card-list">
+                <li>Lecture d’indices actions, taux &amp; devises.</li>
+                <li>Macro, banques centrales, politique économique.</li>
+                <li>Allocation simple : cash, ETF, poche risque.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Pour qui</h3>
+              <ul class="card-list">
+                <li>Étudiants qui veulent comprendre avant d’investir 1&nbsp;€.</li>
+                <li>Profils intéressés par la finance, l’économie, la politique monétaire.</li>
+                <li>Perspectives : stages, master finance, métiers de marchés.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Formats</h3>
+              <ul class="card-list">
+                <li>Sessions “desk marchés” hebdo.</li>
+                <li>Workshops chiffrés &amp; cas concrets.</li>
+                <li>Conférences / tables rondes avec invités.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER -->
+      <section id="newsletter" class="section">
+        <div class="section-inner newsletter-layout">
+          <div class="section-header">
+            <p class="section-kicker">Newsletter</p>
+            <h2 class="section-title">Résumé marchés &amp; macro pour étudiants</h2>
+            <p class="section-sub">
+              Un e-mail synthétique : indices, décisions de banques centrales, quelques graphiques clés.
+              Pensé comme un mémo de desk, pas comme une promesse de rendement.
+            </p>
+          </div>
+
+          <form class="newsletter-form">
+            <label class="field">
+              <span>Adresse e-mail</span>
+              <input type="email" placeholder="prenom.nom@example.com" />
+            </label>
+            <button type="submit" class="btn primary" disabled>
+              Bientôt disponible
+            </button>
+            <p class="newsletter-note">
+              Maquette uniquement. L’inscription réelle passera plus tard par un backend (API d’e-mailing).
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>FEIS – Finance &amp; Economic Insight Society.</p>
+        <p>Site pédagogique étudiant. Aucune recommandation d’investissement.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
